@@ -9,9 +9,9 @@ require_once "Models/Model.php";
 require_once "Controllers/Controller.php";
 
 //Liste des contrôleurs -- A RENSEIGNER
-$controllers = ["login","accueil","deconnexion"];
+$controllers = ["login","accueil","deconnexion","jeu"];
 //Nom du contrôleur par défaut-- A RENSEIGNER
-$controller_default = "accueil";
+$controller_default = "jeu";
 
 //On teste si le paramètre controller existe et correspond à un contrôleur de la liste $controllers
 if (isset($_GET['controller']) and in_array($_GET['controller'], $controllers)) {
@@ -25,7 +25,7 @@ if ($nom_controller == 'deconnexion'){
     header("location:?");
 }
 
-if(!isset($_SESSION['id_user']) ){ // && $nom_controller != $controller_default 
+if(!isset($_SESSION['id_user']) && $nom_controller != "jeu" ){ // && $nom_controller != $controller_default 
     $nom_controller = 'login';
 }
 

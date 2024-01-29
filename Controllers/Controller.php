@@ -41,7 +41,7 @@ abstract class Controller
         $file_name = "Views/view_" . $vue . '.php';
         if (file_exists($file_name)) {
             //Si oui, on l'affiche
-            include $file_name;
+            require $file_name;
         } else {
             //Sinon, on affiche la page d'->action_error
             $this->action_error("La vue n'existe pas !");

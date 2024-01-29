@@ -17,7 +17,7 @@ class Model
      */
     private function __construct()
     {
-        include "Controllers\connec.php";
+        include "Controllers/connec.php";
         $this->bd = new PDO('mysql:host='.$HOST.';dbname='.$DB_NAME,$USER,$PASS);
         $this->bd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->bd->query("SET nameS 'utf8'");
@@ -45,7 +45,7 @@ class Model
 
 
     public function sign_up($infos){
-        $requete = $this->bd->prepare("INSERT INTO `Adherent`(`nom_adherent`, `prenom_adherent`, `telephone_adherent`, `email_adherent`, `mdp_adherent`) 
+        $requete = $this->bd->prepare("INSERT INTO `adherent`(`nom_adherent`, `prenom_adherent`, `telephone_adherent`, `email_adherent`, `mdp_adherent`) 
         VALUES (:nom, :prenom, :phone, :email, :mdp);");
     
         $formulaire_information = ['nom', 'prenom', 'phone', 'email', 'mdp'];
@@ -58,7 +58,7 @@ class Model
     }
 
     public function ajout_post($infos){
-        $requete = $this->bd->prepare("INSERT INTO `Post`(`id_adherent`, `titre`, `contenue`) 
+        $requete = $this->bd->prepare("INSERT INTO `post`(`id_adherent`, `titre`, `contenue`) 
         VALUES (:id_adherent, :titre, :contenue);");
     
         $formulaire_information = ['id_adherent', 'titre', 'contenue'];

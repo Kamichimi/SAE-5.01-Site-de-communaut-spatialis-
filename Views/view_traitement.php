@@ -4,10 +4,10 @@
             header("location:?controller=accueil");
         }
         else{
-            header("location:?");
+            header("location:?controller=login");
         }
     } else {
-        header("location:?");
+        header("location:?controller=login");
     }
 
     if (isset($data['ajout_post'])){
@@ -15,9 +15,9 @@
             header("location:?controller=accueil");
         }
         else{
-            header("location:?");
+            header("location:?controller=accueil");
         }
     } else {
-        header("location:?");
+        header("location:?controller=accueil");
     }
 ?>
