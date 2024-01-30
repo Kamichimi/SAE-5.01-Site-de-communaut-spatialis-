@@ -13,7 +13,7 @@
                     <line x1="12" y1="5" x2="12" y2="19"></line>
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                 </svg>
-                NEW DISCUSSION
+                NOUVELLE DISCUSSION
             </button>
         </div>
 
@@ -61,11 +61,11 @@
         <div class="inner-main-header">
             <a class="nav-link nav-icon rounded-circle nav-link-faded mr-3 d-md-none" href="#" data-toggle="inner-sidebar"><i class="material-icons">arrow_forward_ios</i></a>
             <select class="custom-select custom-select-sm w-auto mr-1">
-                <option selected>Latest</option>
-                <option value="1">Popular</option>
-                <option value="3">Solved</option>
-                <option value="3">Unsolved</option>
-                <option value="3">No Replies Yet</option>
+                <option selected>Plus récents</option>
+                <option value="1">Populaires</option>
+                <option value="3">Résolus</option>
+                <option value="3">Non-Résolus</option>
+                <option value="3">Sans réponses</option>
             </select>
             <span class="input-icon input-icon-sm ml-auto w-auto">
                 <input type="text" class="form-control form-control-sm bg-gray-200 border-gray-200 shadow-none mb-4 mt-4" placeholder="Search forum" />
@@ -92,7 +92,7 @@
                             </h6>
                             <p class="text-secondary"><?php echo $value['contenue']; ?></p>
                             <p class="text-muted">
-                                <a href="javascript:void(0)"><?php echo $value['nom_adherent'].' '.$value['prenom_adherent']; ?></a> poster le
+                                <a href="javascript:void(0)"><?php echo $value['nom_adherent'].' '.$value['prenom_adherent']; ?></a> posté le
                                 <span class="text-secondary font-weight-bold"><?php echo $value['date_post']; ?></span>
                             </p>
                         </div>
