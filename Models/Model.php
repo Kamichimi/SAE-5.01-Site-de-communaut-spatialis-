@@ -79,5 +79,12 @@ class Model
     }
     
 
-    
+    public function getPostsByString($search){
+        
+        $requete = $this->bd->prepare("SELECT * FROM post INNER JOIN adherent on post.id_adherent = adherent.id_adherent WHERE titre LIKE :search OR contenue LIKE :search ORDER BY date_post DESC");
+        $requete->bindValue(':search', "%".$search."%");
+        $requete->execute();
+        return $requete->fetchall(PDO::FETCH_ASSOC);
+
+    }
 }

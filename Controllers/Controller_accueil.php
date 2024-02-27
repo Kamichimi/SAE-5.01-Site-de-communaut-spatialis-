@@ -5,9 +5,25 @@ class Controller_accueil extends Controller
     public function action_acceuil()
     {
         $m = Model::getModel();
-        $data = [
-                "liste" => $m->getAccueil(),
-        ];
+
+        if(!isset($_GET['search'])){
+
+            
+            $data = [
+                    "liste" => $m->getAccueil(),
+            ];
+            
+
+        }
+
+        else{
+        
+            $data = [
+                    "liste" => $m->getPostsByString($_GET["search"]),
+            ];
+
+        }
+
         $this->render("forum", $data);
     }
 
